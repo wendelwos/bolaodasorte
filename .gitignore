@@ -1,8 +1,8 @@
 # Uploads and user content
 uploads/
 
-# Local config (use production config on server)
-# config.local.php
+# Environment config with database credentials
+includes/env.php
 
 # IDE and temp files
 .idea/

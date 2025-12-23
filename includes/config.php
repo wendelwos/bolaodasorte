@@ -4,11 +4,16 @@
  * Database: MySQL | Security: bcrypt, CSRF
  */
 
-// Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'u728238878_bolaodasorte');
-define('DB_USER', 'u728238878_user_bd_dasort');
-define('DB_PASS', 'D@Sorte3553b0l40');
+// Load environment-specific database config (not tracked in git)
+if (file_exists(__DIR__ . '/env.php')) {
+    require_once __DIR__ . '/env.php';
+} else {
+    // Default development configuration
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'bolaodasorte');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+}
 
 // Application Settings
 define('APP_NAME', 'Bolão da Sorte');
