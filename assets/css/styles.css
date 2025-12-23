@@ -1,0 +1,286 @@
+/**
+ * Bolão da Sorte - Main Stylesheet
+ * v2.0
+ */
+
+/* ==============================
+   Base & Typography
+   ============================== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    transition: background-color 0.3s ease;
+}
+
+.dark body {
+    background-color: #111827;
+}
+
+/* ==============================
+   Components - Lottery Ball
+   ============================== */
+.lottery-ball {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lottery-ball:hover {
+    transform: scale(1.05);
+}
+
+.peer:checked + .lottery-ball {
+    background: #009e4a !important;
+    color: white !important;
+    border-color: #007a3a !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 158, 74, 0.5);
+}
+
+/* ==============================
+   Components - Winner Card
+   ============================== */
+.winner-card {
+    animation: winnerGlow 1.5s ease-in-out infinite;
+    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+    border-left-color: #f59e0b !important;
+    border-left-width: 6px !important;
+}
+
+@keyframes winnerGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.9), 0 0 50px rgba(16, 185, 129, 0.4);
+    }
+}
+
+.winner-badge {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ==============================
+   Components - Toast Notifications
+   ============================== */
+.toast {
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ==============================
+   Components - Header
+   ============================== */
+.header-logo {
+    height: 70px;
+    margin: -15px 0;
+    width: auto;
+}
+
+/* ==============================
+   Form Elements
+   ============================== */
+.label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.input-std {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.input-std:focus {
+    border-color: #009e4a;
+    box-shadow: 0 0 0 3px rgba(0, 158, 74, 0.15);
+}
+
+.dark .input-std {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: white;
+}
+
+.dark .input-std:focus {
+    border-color: #009e4a;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+.btn-primary {
+    background-color: #009e4a;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* ==============================
+   Cards
+   ============================== */
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card {
+    background: #1f2937;
+}
+
+/* ==============================
+   Dark Mode Overrides
+   ============================== */
+.dark .text-gray-800 {
+    color: #f3f4f6;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700 {
+    color: #9ca3af;
+}
+
+.dark .bg-white {
+    background: #1f2937;
+}
+
+.dark .bg-gray-50 {
+    background: #374151;
+}
+
+.dark .bg-gray-100 {
+    background: #374151;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-100 {
+    border-color: #4b5563;
+}
+
+.dark .label {
+    color: #9ca3af;
+}
+
+/* ==============================
+   Modal
+   ============================== */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* ==============================
+   Confetti Canvas
+   ============================== */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ==============================
+   Utilities
+   ============================== */
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}

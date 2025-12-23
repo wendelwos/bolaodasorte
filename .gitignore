@@ -1,0 +1,21 @@
+# Uploads and user content
+uploads/
+
+# Local config (use production config on server)
+# config.local.php
+
+# IDE and temp files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+
+# Composer (vendor already included for production)
+# vendor/
