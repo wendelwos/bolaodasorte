@@ -6,9 +6,9 @@
 
 // Database Configuration
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'bolaodasorte');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_NAME', 'u728238878_bolaodasorte');
+define('DB_USER', 'u728238878_user_bolao_bd');
+define('DB_PASS', 'kyO8257@--aseK');
 
 // Application Settings
 define('APP_NAME', 'Bolão da Sorte');
