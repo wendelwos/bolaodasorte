@@ -18,7 +18,7 @@ define('ADMIN_PASSWORD', 'admin123');
 
 // Paths
 define('BASE_PATH', dirname(__DIR__));
-define('ASSETS_PATH', '/bolaodasorte/assets');
+define('ASSETS_PATH', (strpos($_SERVER['HTTP_HOST'] ?? '', 'localhost') !== false) ? '/bolaodasorte/assets' : '/assets');
 define('UPLOADS_PATH', BASE_PATH . '/uploads');
 
 // PIX Configuration
